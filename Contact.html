@@ -39,23 +39,20 @@
 
         <!-- CONTACT FORM -->
 
-        <form action="https://formspree.io/f/xjgznpwl" 
-          method = "POST" 
-          class = contact form">
-      
+        <form class="contact-form">
 
-          <label name="name">Name>
-            <input
+          <label name="name">Name</label>
+
+          <input
             type="text"
             id="name"
             placeholder="Your Name"
             class="paper-input"
-            required/>
-          </label>
+            required
+          />
 
+          <label name="email">Email</label>
 
-          <label name="email">Email
-            
           <input
             type="email"
             id="email"
@@ -64,17 +61,15 @@
             required
           />
 
-          </label>
+          <label name="message">Message</label>
 
-          <label name="message">Message
-           <textarea
+          <textarea
             id="message"
             placeholder="Write your message here..."
             class="paper-input"
             rows="5"
-            required>
-         </textarea>
-          </label>
+            required
+         ></textarea>
 
           <div class="button-container">
             <button type="submit" class="btn btn-stamp">
