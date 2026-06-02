@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Novel Nest</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="services.html">Services</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+
+    <div class="container">
+      <div class="letter-box">
+        <h1 style="text-align: center; color: var(--forest-green)">
+          Send us a Note
+        </h1>
+        <p style="text-align: center; font-style: italic">
+          We'd love to hear from you.
+        </p>
+
+        <div class="contact-info">
+          <p><strong>Email:</strong> novelnest.co.za@gmail.com [cite: 1]</p>
+          <p><strong>Instagram:</strong> @novel_nest.co.za [cite: 1]</p>
+          <p>
+            <strong>Location:</strong> Cape Town, South Africa (Coming Soon)
+            [cite: 1]
+          </p>
+        </div>
+
+        <hr />
+
+        <form class="contact-form">
+          <input type="text" placeholder="Your Name" class="paper-input" />
+          <input type="email" placeholder="Your Email" class="paper-input" />
+          <textarea
+            placeholder="Write your message here..."
+            class="paper-input"
+            rows="5"
+          ></textarea>
+          <div style="text-align: right">
+            <button type="button" class="btn btn-stamp" onclick="sendLetter()">
+              Send Message
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <p>© 2026 Novel Nest | All Rights Reserved [cite: 1]</p>
+    </footer>
+
+    <script>
+      function sendLetter() {
+        alert(
+          "✉️ Your letter has been sealed and sent! We'll get back to you soon. If you have any urgent inquiries, please reach out to us via email or Instagram. 📬",
+        );
+      }
+    </script>
+  </body>
+</html>
