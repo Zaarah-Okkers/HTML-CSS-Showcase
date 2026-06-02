@@ -458,7 +458,7 @@ button:hover {
 
   border-radius: 25px;
 
-  background: rgba(255, 255, 255, 0.1);
+  background: var (--forest-green--);
 
   backdrop-filter: blur(10px);
 
