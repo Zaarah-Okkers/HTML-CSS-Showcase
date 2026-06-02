@@ -1,46 +1,164 @@
-<form
-  action="https://formspree.io/f/xjgznpwl"
-  class="contact-form"
-  method="POST"
->
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-  <label for="name">Name</label>
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
-  <input
-    type="text"
-    id="name"
-    name="name"
-    placeholder="Your Name"
-    class="paper-input"
-    required
-  />
+    <meta
+      name="description"
+      content="Contact Zaarah Okkers for web development, creative projects, and collaborations."
+    />
 
-  <label for="email">Email</label>
+    <title>Contact | Zaarah Portfolio</title>
 
-  <input
-    type="email"
-    id="email"
-    name="email"
-    placeholder="Your Email"
-    class="paper-input"
-    required
-  />
+    <link rel="stylesheet" href="Style.css" />
+  </head>
 
-  <label for="message">Message</label>
+  <body>
 
-  <textarea
-    id="message"
-    name="message"
-    placeholder="Write your message here..."
-    class="paper-input"
-    rows="5"
-    required
-  ></textarea>
+    <!-- NAVIGATION -->
 
-  <div class="button-container">
-    <button type="submit" class="btn btn-stamp">
-      Send Message
-    </button>
-  </div>
+    <nav>
+      <div class="nav-links">
+        <a href="Index.html">Home</a>
+        <a href="About.html">About</a>
+        <a href="Projects.html">Projects</a>
+        <a href="Contact.html">Contact</a>
+      </div>
+    </nav>
 
-</form>
+    <!-- CONTACT SECTION -->
+
+    <section class="container">
+
+      <div class="letter-box">
+
+        <h1 class="contact-title">Get in Touch</h1>
+
+        <p class="contact-subtitle">
+          Have a project idea, collaboration, or just want to say hi?
+          Send me a message below.
+        </p>
+
+        <!-- CONTACT FORM -->
+
+        <form
+          action="https://formspree.io/f/xjgznpwl"
+          method="POST"
+          class="contact-form"
+        >
+
+          <!-- NAME -->
+
+          <label for="name">Name</label>
+
+          <input
+            type="text"
+            id="name"
+            name="name"
+            placeholder="Your Name"
+            class="paper-input"
+            required
+          />
+
+          <!-- EMAIL -->
+
+          <label for="email">Email</label>
+
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Your Email"
+            class="paper-input"
+            required
+          />
+
+          <!-- MESSAGE -->
+
+          <label for="message">Message</label>
+
+          <textarea
+            id="message"
+            name="message"
+            placeholder="Write your message here..."
+            class="paper-input"
+            rows="5"
+            required
+          ></textarea>
+
+          <!-- BUTTON -->
+
+          <div class="button-container">
+
+            <button
+              type="submit"
+              class="btn btn-stamp"
+            >
+              Send Message
+            </button>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+      <div class="footer-content">
+
+        <h3>Zaarah Okkers</h3>
+
+        <p class="footer-text">
+          Web Developer • Creative Designer • Portfolio Showcase
+        </p>
+
+        <div class="footer-links">
+
+          <a href="mailto:zaarahokkers@gmail.com">
+            Email
+          </a>
+
+          <span>|</span>
+
+          <a
+            href="https://www.linkedin.com/in/zaarah-okkers-3688b1377"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <span>|</span>
+
+          <a
+            href="https://www.lifechoicesacademy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lansdowne, Cape Town, South Africa
+          </a>
+
+        </div>
+
+        <div class="footer-line"></div>
+
+        <p class="copyright">
+          © 2026 Zaarah Okkers | All Rights Reserved
+        </p>
+
+      </div>
+
+    </footer>
+
+  </body>
+</html>
