@@ -1,137 +1,46 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
+<form
+  action="https://formspree.io/f/xjgznpwl"
+  class="contact-form"
+  method="POST"
+>
 
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1.0"
-    />
+  <label for="name">Name</label>
 
-    <meta
-      name="description"
-      content="Contact Zaarah Okkers for web development, creative projects, and collaborations."
-    />
+  <input
+    type="text"
+    id="name"
+    name="name"
+    placeholder="Your Name"
+    class="paper-input"
+    required
+  />
 
-    <title>Contact | Zaarah Portfolio</title>
+  <label for="email">Email</label>
 
-    <link rel="stylesheet" href="Style.css" />
-  </head>
+  <input
+    type="email"
+    id="email"
+    name="email"
+    placeholder="Your Email"
+    class="paper-input"
+    required
+  />
 
-  <body>
-    <!-- NAVIGATION -->
+  <label for="message">Message</label>
 
-    <nav>
-      <div class="nav-links">
-        <a href="Index.html">Home</a>
-        <a href="About.html">About</a>
-        <a href="Projects.html">Projects</a>
-        <a href="Contact.html">Contact</a>
-      </div>
-    </nav>
+  <textarea
+    id="message"
+    name="message"
+    placeholder="Write your message here..."
+    class="paper-input"
+    rows="5"
+    required
+  ></textarea>
 
-    <!-- CONTACT SECTION -->
-
-    <section class="container">
-      <div class="letter-box">
-
-        <h1 class="contact-title">Get in Touch</h1>
-
-        <!-- CONTACT FORM -->
-
-        <form action="https://formspree.io/f/xjgznpwl"
-          class = "contact-form"
-          method="POST"
-      
-
-          <label name="name">Name</label>
-
-          <input
-            type="text"
-            id="name"
-            placeholder="Your Name"
-            class="paper-input"
-            required
-          />
-
-          <label name="email">Email</label>
-
-          <input
-            type="email"
-            id="email"
-            placeholder="Your Email"
-            class="paper-input"
-            required
-          />
-
-          <label name="message">Message</label>
-
-          <textarea
-            id="message"
-            placeholder="Write your message here..."
-            class="paper-input"
-            rows="5"
-            required
-         ></textarea>
-
-          <div class="button-container">
-            <button type="submit" class="btn btn-stamp">
-              Send Message
-            </button>
-          </div>
-
-        </form>
-
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-<footer class="footer">
-
-  <div class="footer-content">
-
-    <h3>Zaarah Okkers</h3>
-
-    <p class="footer-text">
-      Web Developer • Creative Designer • Portfolio Showcase
-    </p>
-
-    <div class="footer-links">
-
-      <a href="mailto:zaarahokkers@gmail.com">
-        Email
-      </a>
-
-      <span>|</span>
-
-      <a
-        href="https://www.linkedin.com/in/zaarah-okkers-3688b1377"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-        LinkedIn
-      </a>
-
-      <span>|</span>
-
-      <a
-        href="https://www.lifechoicesacademy.com"
-        target="_blank"
-        rel="noopener noreferrer"
-      >
-       Lansdown Capetown, South Africa
-      </a>
-
-    </div>
-
-    <div class="footer-line"></div>
-
-    <p class="copyright">
-      © 2026 Zaarah Okkers | All Rights Reserved
-    </p>
-
+  <div class="button-container">
+    <button type="submit" class="btn btn-stamp">
+      Send Message
+    </button>
   </div>
 
-</footer>
-  </body>
-</html>
+</form>
