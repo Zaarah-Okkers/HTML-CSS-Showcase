@@ -3,7 +3,10 @@
   <head>
     <meta charset="UTF-8" />
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
 
     <meta
       name="description"
@@ -16,6 +19,7 @@
   </head>
 
   <body>
+
     <!-- NAVIGATION -->
 
     <nav>
@@ -30,93 +34,126 @@
     <!-- CONTACT SECTION -->
 
     <section class="container">
+
       <div class="letter-box">
+
         <h1 class="contact-title">Get in Touch</h1>
-
-        <!-- CONTACT INFO -->
-
-        <div class="contact-info">
-          <p>
-            <strong>Email:</strong>
-
-            <a href="mailto:zaarahokkers@gmail.com">
-             <button>Send Email</button>
-            </a>
-          </p>
-
-          <p>
-            <strong>LinkedIn:</strong>
-
-            <a
-              href="https://www.linkedin.com/in/zaarah-okkers-3688b1377"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-             <button>View LinkedIn Profile</button>
-            </a>
-          </p>
-
-          <p>
-            <strong>Location:</strong>
-
-            <a
-              href="https://www.lifechoicesacademy.com"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <button>View Location</button>
-            </a>
-          </p>
-        </div>
-
-        <hr />
 
         <!-- CONTACT FORM -->
 
-        <form class="contact-form">
+        <form
+          action="https://formspree.io/f/xjgznpwl"
+          method="POST"
+          class="contact-form"
+        >
+
+          <!-- NAME -->
+
           <label for="name">Name</label>
 
           <input
             type="text"
             id="name"
+            name="name"
             placeholder="Your Name"
             class="paper-input"
             required
           />
+
+          <!-- EMAIL -->
 
           <label for="email">Email</label>
 
           <input
             type="email"
             id="email"
+            name="email"
             placeholder="Your Email"
             class="paper-input"
             required
           />
 
+          <!-- MESSAGE -->
+
           <label for="message">Message</label>
 
           <textarea
             id="message"
+            name="message"
             placeholder="Write your message here..."
             class="paper-input"
             rows="5"
             required
           ></textarea>
 
+          <!-- BUTTON -->
+
           <div class="button-container">
-            <button type="submit" class="btn btn-stamp">
+
+            <button
+              type="submit"
+              class="btn btn-stamp"
+            >
               Send Message
             </button>
+
           </div>
+
         </form>
+
       </div>
+
     </section>
 
     <!-- FOOTER -->
 
-    <footer>
-      <p>© 2026 Zaarah Okkers | All Rights Reserved</p>
+    <footer class="footer">
+
+      <div class="footer-content">
+
+        <h3>Zaarah Okkers</h3>
+
+        <p class="footer-text">
+          Web Developer • Creative Designer • Portfolio Showcase
+        </p>
+
+        <div class="footer-links">
+
+          <a href="mailto:zaarahokkers@gmail.com">
+            Email
+          </a>
+
+          <span>|</span>
+
+          <a
+            href="https://www.linkedin.com/in/zaarah-okkers-3688b1377"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn
+          </a>
+
+          <span>|</span>
+
+          <a
+            href="https://www.lifechoicesacademy.com"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Lansdowne, Cape Town, South Africa
+          </a>
+
+        </div>
+
+        <div class="footer-line"></div>
+
+        <p class="copyright">
+          © 2026 Zaarah Okkers | All Rights Reserved
+        </p>
+
+      </div>
+
     </footer>
+
   </body>
 </html>
