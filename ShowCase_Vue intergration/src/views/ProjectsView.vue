@@ -1,38 +1,54 @@
 <template>
   <section class="showcase-section">
-    <div class="section-header">
-      <i class="fas fa-star"></i>
-      <h1 class="title">My Project Showcase</h1>
-      <i class="fas fa-star"></i>
+    <h1 class="title">My Work & Achievements</h1>
+    
+    <!-- PROJECTS SECTION -->
+    <div class="section-divider">
+      <h2 class="section-title">Projects</h2>
     </div>
-    <p class="subtitle">Check out the amazing projects I've been working on!</p>
-
     <div class="projects-container">
       <div v-for="project in projects" :key="project.id" class="project-card">
-        <div class="project-image-wrapper">
-          <img :src="project.image" :alt="project.title" />
-          <div class="project-badge">
-            <i :class="project.badgeIcon"></i>
-          </div>
+        <img :src="project.image" :alt="project.title" />
+        <h3>{{ project.title }}</h3>
+        <p>{{ project.description }}</p>
+        <a :href="project.link" target="_blank" rel="noopener noreferrer">
+          <button class="btn-view">View Project</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- CERTIFICATIONS SECTION -->
+    <div class="section-divider">
+      <h2 class="section-title">Certifications & Achievements</h2>
+    </div>
+    <div class="certifications-container">
+      <div v-for="cert in certifications" :key="cert.id" class="cert-card">
+        <div class="cert-icon">
+          <i :class="cert.icon"></i>
         </div>
-        <div class="project-content">
-          <h2>{{ project.title }}</h2>
-          <p>{{ project.description }}</p>
-          <ul class="case-study">
-            <li><strong>My role:</strong> {{ project.role }}</li>
-            <li><strong>Tools:</strong> {{ project.tools }}</li>
-          </ul>
-          <div class="project-tags">
-            <span v-for="tag in project.tags" :key="tag" class="tag">
-              {{ tag }}
-            </span>
-          </div>
-          <a :href="project.link" target="_blank" rel="noopener noreferrer" class="project-link">
-            <button class="btn-view">
-              <i class="fas fa-external-link-alt"></i> {{ project.buttonText }}
-            </button>
-          </a>
+        <h3>{{ cert.title }}</h3>
+        <p class="cert-issuer">{{ cert.issuer }}</p>
+        <p class="cert-description">{{ cert.description }}</p>
+        <a v-if="cert.link" :href="cert.link" target="_blank" rel="noopener noreferrer">
+          <button class="btn-view">View Certificate</button>
+        </a>
+      </div>
+    </div>
+
+    <!-- SOCIAL & LINKS SECTION -->
+    <div class="section-divider">
+      <h2 class="section-title">Connect With Me</h2>
+    </div>
+    <div class="social-container">
+      <div v-for="social in socialLinks" :key="social.id" class="social-card">
+        <div class="social-icon">
+          <i :class="social.icon"></i>
         </div>
+        <h3>{{ social.title }}</h3>
+        <p>{{ social.description }}</p>
+        <a :href="social.link" target="_blank" rel="noopener noreferrer">
+          <button class="btn-view">Visit</button>
+        </a>
       </div>
     </div>
   </section>
@@ -46,81 +62,72 @@ export default {
       projects: [
         {
           id: 1,
-          title: 'CampusSwap SA',
-          description:
-            'A student marketplace for buying and selling academic items such as textbooks. I built the Academic Marketplace page as part of a team, working on the Vue frontend while the backend was built separately.',
-          role: 'Frontend developer (Academic Marketplace page)',
-          tools: 'VS Code, Vue.js, JavaScript, HTML, CSS',
-          image: '/github.png',
-          link: 'https://campusswap-fontend.onrender.com',
-          buttonText: 'View Live Site',
-          badgeIcon: 'fas fa-graduation-cap',
-          tags: ['Vue.js', 'Frontend', 'Team Project']
+          title: 'CampusSwap',
+          description: 'A full-stack academic marketplace platform built with Vue.js, HTML, and CSS. Connect with students to buy, sell, and exchange academic materials and resources on campus.',
+          image: '/Novel Nest (1).jpg',
+          link: 'https://campusswap-fontend.onrender.com'
         },
         {
           id: 2,
-          title: 'HRFlow',
-          description:
-            'A payroll and HR web app for a company called ModernTech, with a secure sign-in and pages for payroll and employee performance. It keeps employee records, payslips and attendance in one place.',
-          role: 'Web developer',
-          tools: 'VS Code, HTML, CSS, JavaScript',
+          title: 'Python Mini Toolkit',
+          description: 'A mini toolkit built with Python for handling common beginner coding tasks and exercises.',
           image: '/github.png',
-          link: 'https://hrflow-xg3y.onrender.com',
-          buttonText: 'View Live Site',
-          badgeIcon: 'fas fa-users',
-          tags: ['Full Stack', 'Payroll', 'HR']
+          link: 'https://github.com/Zaarah-Okkers'
         },
         {
           id: 3,
-          title: 'YouthConnect',
-          description:
-            'A platform connecting young people with internships, jobs, training programmes and freelance opportunities, with profile creation, opportunity browsing and proposal submission.',
-          role: 'Web developer',
-          tools: 'VS Code, HTML, CSS, JavaScript',
-          image: '/github.png',
-          link: 'https://zaarah-okkers.github.io/YouthConnect/',
-          buttonText: 'View Live Site',
-          badgeIcon: 'fas fa-briefcase',
-          tags: ['Frontend', 'Career Platform']
+          title: 'Novel Nest',
+          description: 'A creative website project showcasing branding, layout design, and responsive web development skills.',
+          image: '/Novel Nest (1).jpg',
+          link: './Novel Nest/Index.html'
         },
         {
           id: 4,
-          title: 'Python Mini Toolkit',
-          description:
-            'A mini toolkit that solves common beginner coding tasks and exercises in one place. I designed and wrote it myself to practise Python fundamentals.',
-          role: 'Solo developer',
-          tools: 'VS Code, Python, Git, GitHub',
-          image: '/github.png',
-          link: 'https://github.com/Zaarah-Okkers',
-          buttonText: 'View Project',
-          badgeIcon: 'fas fa-code',
-          tags: ['Python', 'Backend', 'Toolkit']
-        },
-        {
-          id: 5,
-          title: 'Novel Nest',
-          description:
-            'A responsive book marketplace website. I designed the branding and layout and built every page to work on desktop and mobile.',
-          role: 'Solo designer and developer',
-          tools: 'VS Code, HTML, CSS',
-          image: '/Novel Nest (1).jpg',
-          link: '/Novel%20Nest/Index.html',
-          buttonText: 'View Project',
-          badgeIcon: 'fas fa-book',
-          tags: ['HTML', 'CSS', 'Design']
-        },
-        {
-          id: 6,
           title: 'HTML & CSS Showcase',
-          description:
-            'A modern showcase website that demonstrates my front-end styling skills, later rebuilt with Vue.js and Vue Router into this portfolio.',
-          role: 'Solo developer',
-          tools: 'VS Code, HTML, CSS, JavaScript, Vue.js, SweetAlert',
+          description: 'A modern showcase website highlighting my front-end development and styling skills.',
           image: '/Screenshot 2026-05-29 112635.png',
-          link: 'https://github.com/Zaarah-Okkers',
-          buttonText: 'View Project',
-          badgeIcon: 'fas fa-palette',
-          tags: ['HTML', 'CSS', 'Frontend']
+          link: 'https://github.com/Zaarah-Okkers'
+        }
+      ],
+      certifications: [
+        {
+          id: 1,
+          title: 'Certificate of Achievement - Research',
+          issuer: 'GRIT - Gender Rights in Tech',
+          description: 'Recognized for commitment to research and advancing gender equality in the tech industry.',
+          icon: 'fas fa-certificate',
+          link: 'https://www.linkedin.com/company/grit-gbvsouthafrica/'
+        },
+        {
+          id: 2,
+          title: 'Web Development Trainee',
+          issuer: 'Life Choices Academy',
+          description: 'Completed structured full-stack web development program covering HTML, CSS, JavaScript, and Vue.js.',
+          icon: 'fas fa-graduation-cap',
+          link: null
+        }
+      ],
+      socialLinks: [
+        {
+          id: 1,
+          title: 'HRFlow Platform',
+          description: 'Explore my profile on the HRFlow talent platform.',
+          icon: 'fas fa-briefcase',
+          link: 'https://hrflow-xg3y.onrender.com'
+        },
+        {
+          id: 2,
+          title: 'LinkedIn Profile',
+          description: 'Connect with me on LinkedIn and view my professional network.',
+          icon: 'fas fa-linkedin',
+          link: 'https://lnkd.in/dHsmYmsR'
+        },
+        {
+          id: 3,
+          title: 'LinkedIn Article',
+          description: 'Read my insights and articles on LinkedIn.',
+          icon: 'fas fa-newspaper',
+          link: 'https://lnkd.in/dXM6X-5z'
         }
       ]
     }
@@ -129,205 +136,209 @@ export default {
 </script>
 
 <style scoped>
-:root {
-  --hello-kitty-pink: #ffb6d9;
-  --hello-kitty-light-pink: #ffd4e5;
-  --hello-kitty-red: #ff1493;
-  --hello-kitty-white: #ffffff;
-  --hello-kitty-cream: #fffacd;
-  --hello-kitty-purple: #dda0dd;
-  --hello-kitty-blue: #add8e6;
-}
-
 .showcase-section {
   min-height: 100vh;
   padding: 100px 20px;
-  background: linear-gradient(135deg, var(--hello-kitty-cream) 0%, var(--hello-kitty-light-pink) 100%);
-  background-attachment: fixed;
+  background: linear-gradient(135deg, #f5ebdd, #709a5f);
   text-align: center;
-  position: relative;
-}
-
-.showcase-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-image: 
-    repeating-linear-gradient(45deg, transparent, transparent 35px, rgba(255, 182, 217, 0.03) 35px, rgba(255, 182, 217, 0.03) 70px),
-    repeating-linear-gradient(-45deg, transparent, transparent 35px, rgba(221, 160, 221, 0.03) 35px, rgba(221, 160, 221, 0.03) 70px);
-  pointer-events: none;
-  z-index: 0;
-}
-
-.section-header {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  margin-bottom: 15px;
-  position: relative;
-  z-index: 1;
-}
-
-.section-header i {
-  font-size: 2rem;
-  color: var(--hello-kitty-red);
-  animation: bounce 2s ease-in-out infinite;
 }
 
 .title {
-  font-size: 3.5rem;
-  color: var(--hello-kitty-red);
-  margin-bottom: 0;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  font-weight: 900;
-}
-
-.subtitle {
-  font-size: 1.1rem;
-  color: var(--hello-kitty-red);
+  font-size: 3rem;
+  color: #1f4f2b;
   margin-bottom: 50px;
-  position: relative;
-  z-index: 1;
-  font-weight: 600;
+  animation: slideDown 1.5s ease;
 }
 
+.section-divider {
+  margin: 60px 0 40px;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #1f4f2b;
+  padding-bottom: 15px;
+  border-bottom: 3px solid #6b4f3a;
+  display: inline-block;
+}
+
+/* PROJECTS SECTION */
 .projects-container {
   display: flex;
   justify-content: center;
   gap: 35px;
   flex-wrap: wrap;
-  position: relative;
-  z-index: 1;
+  margin-bottom: 40px;
 }
 
 .project-card {
   width: 320px;
   background: rgba(255, 255, 255, 0.12);
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(12px);
   border-radius: 25px;
   overflow: hidden;
   padding-bottom: 25px;
-  box-shadow: 0 8px 20px rgba(255, 20, 147, 0.12);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
   transition: all 0.4s ease;
   animation: fadeUp 1s ease;
-  border: 2px solid rgba(255, 255, 255, 0.25);
-  display: flex;
-  flex-direction: column;
 }
 
 .project-card:hover {
   transform: translateY(-12px);
-  box-shadow: 0 12px 28px rgba(255, 20, 147, 0.2);
-  background: rgba(255, 255, 255, 0.18);
-}
-
-.project-image-wrapper {
-  position: relative;
-  overflow: hidden;
-  height: 220px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.35);
 }
 
 .project-card img {
   width: 100%;
-  height: 100%;
+  height: 220px;
   object-fit: cover;
   transition: transform 0.4s ease;
 }
 
 .project-card:hover img {
-  transform: scale(1.08);
+  transform: scale(1.05);
 }
 
-.project-badge {
-  position: absolute;
-  top: 15px;
-  right: 15px;
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--hello-kitty-red) 0%, #ff69b4 100%);
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.project-card h3 {
+  margin: 20px 0 10px;
   color: white;
-  font-size: 1.5rem;
-  box-shadow: 0 4px 12px rgba(255, 20, 147, 0.25);
-  animation: spin 3s linear infinite;
-}
-
-.project-content {
-  padding: 20px;
-  flex-grow: 1;
-  display: flex;
-  flex-direction: column;
-}
-
-.project-card h2 {
-  margin: 0 0 10px;
-  color: white;
-  font-size: 1.3rem;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.15);
 }
 
 .project-card p {
+  padding: 0 20px;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 15px;
-  font-size: 0.95rem;
-  flex-grow: 1;
+  color: #f5ebdd;
+  margin-bottom: 20px;
 }
 
-.project-tags {
+/* CERTIFICATIONS SECTION */
+.certifications-container {
   display: flex;
+  justify-content: center;
+  gap: 35px;
   flex-wrap: wrap;
-  gap: 8px;
+  margin-bottom: 40px;
+}
+
+.cert-card {
+  width: 320px;
+  background: linear-gradient(135deg, rgba(31, 79, 43, 0.2), rgba(107, 79, 58, 0.2));
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  animation: fadeUp 1.2s ease;
+  border: 2px solid rgba(212, 163, 115, 0.3);
+}
+
+.cert-card:hover {
+  transform: translateY(-12px);
+  background: linear-gradient(135deg, rgba(31, 79, 43, 0.3), rgba(107, 79, 58, 0.3));
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border-color: rgba(212, 163, 115, 0.6);
+}
+
+.cert-icon {
+  font-size: 3rem;
+  color: #1f4f2b;
   margin-bottom: 15px;
+  animation: bounce 2s ease-in-out infinite;
 }
 
-.tag {
-  background: rgba(255, 255, 255, 0.2);
-  color: white;
-  padding: 5px 12px;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid rgba(255, 255, 255, 0.3);
+.cert-card h3 {
+  color: #1f4f2b;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
 }
 
-.project-link {
-  text-decoration: none;
-  margin-top: auto;
+.cert-issuer {
+  color: #6b4f3a;
+  font-weight: 700;
+  margin-bottom: 10px;
+  font-size: 0.95rem;
+}
+
+.cert-description {
+  color: #1f4f2b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+/* SOCIAL SECTION */
+.social-container {
+  display: flex;
+  justify-content: center;
+  gap: 35px;
+  flex-wrap: wrap;
+}
+
+.social-card {
+  width: 320px;
+  background: linear-gradient(135deg, rgba(107, 79, 58, 0.2), rgba(31, 79, 43, 0.2));
+  backdrop-filter: blur(12px);
+  border-radius: 25px;
+  padding: 30px 25px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  transition: all 0.4s ease;
+  animation: fadeUp 1.4s ease;
+  border: 2px solid rgba(107, 79, 58, 0.3);
+}
+
+.social-card:hover {
+  transform: translateY(-12px);
+  background: linear-gradient(135deg, rgba(107, 79, 58, 0.3), rgba(31, 79, 43, 0.3));
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25);
+  border-color: rgba(107, 79, 58, 0.6);
+}
+
+.social-icon {
+  font-size: 3rem;
+  color: #6b4f3a;
+  margin-bottom: 15px;
+  animation: bounce 2s ease-in-out infinite;
+}
+
+.social-card h3 {
+  color: #1f4f2b;
+  margin-bottom: 8px;
+  font-size: 1.2rem;
+}
+
+.social-card p {
+  color: #1f4f2b;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
 }
 
 .btn-view {
-  width: 100%;
-  padding: 12px 20px;
-  border: 2px solid white;
+  padding: 12px 25px;
+  border: none;
   border-radius: 20px;
-  background: linear-gradient(135deg, var(--hello-kitty-red) 0%, #ff69b4 100%);
+  background-color: #1f4f2b;
   color: white;
   font-size: 0.95rem;
-  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+  font-weight: 700;
 }
 
 .btn-view:hover {
-  background: linear-gradient(135deg, #ff69b4 0%, var(--hello-kitty-red) 100%);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 16px rgba(255, 20, 147, 0.25);
+  background-color: #6b4f3a;
+  transform: translateY(-3px) scale(1.05);
 }
 
-.btn-view i {
-  font-size: 1rem;
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes fadeUp {
@@ -350,35 +361,20 @@ export default {
   }
 }
 
-@keyframes spin {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
 @media (max-width: 768px) {
   .title {
-    font-size: 2.5rem;
+    font-size: 2.2rem;
   }
 
-  .subtitle {
-    font-size: 0.95rem;
+  .section-title {
+    font-size: 1.5rem;
   }
 
-  .project-card {
+  .project-card,
+  .cert-card,
+  .social-card {
     width: 100%;
     max-width: 350px;
-  }
-
-  .section-header {
-    gap: 10px;
-  }
-
-  .section-header i {
-    font-size: 1.5rem;
   }
 }
 </style>

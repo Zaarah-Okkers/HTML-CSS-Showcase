@@ -2,10 +2,7 @@
   <div id="app">
     <!-- NAVIGATION -->
     <nav aria-label="Main navigation">
-      <div class="nav-logo">
-        <div class="bow">🎀</div>
-        Zaarah's Portfolio
-      </div>
+      <div class="nav-logo">Zaarah's Portfolio</div>
       <router-link 
         v-for="link in navLinks" 
         :key="link.path"
@@ -22,9 +19,9 @@
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-content">
-        <h3>✧ Zaarah Okkers ✧</h3>
+        <h3>Zaarah Okkers</h3>
         <p class="footer-text">
-          Creative Developer • Dreamer • Designer
+          Web Developer • Designer • Creative Thinker
         </p>
         <div class="footer-links">
           <a href="mailto:zaarahokkers@gmail.com">
@@ -35,8 +32,8 @@
             <i class="fas fa-briefcase"></i> LinkedIn
           </a>
           <span>•</span>
-          <a href="https://www.lifechoicesacademy.com" target="_blank" rel="noopener noreferrer">
-            <i class="fas fa-map-marker-alt"></i> Cape Town
+          <a href="https://github.com/Zaarah-Okkers" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-github"></i> GitHub
           </a>
         </div>
         <div class="footer-line"></div>
@@ -53,18 +50,25 @@ export default {
     return {
       navLinks: [
         { name: 'Home', path: '/', icon: 'fas fa-home' },
-        { name: 'About', path: '/about', icon: 'fas fa-user-circle' },
-        { name: 'Projects', path: '/projects', icon: 'fas fa-star' },
-        { name: 'Skills', path: '/skills', icon: 'fas fa-rocket' },
-        { name: 'Resume', path: '/resume', icon: 'fas fa-file-alt' },
-        { name: 'Testimonials', path: '/testimonials', icon: 'fas fa-quote-right' },
-        { name: 'Contact', path: '/contact', icon: 'fas fa-envelope-open' }
+        { name: 'About', path: '/about', icon: 'fas fa-user' },
+        { name: 'Projects', path: '/projects', icon: 'fas fa-briefcase' },
+        { name: 'Contact', path: '/contact', icon: 'fas fa-envelope' }
       ]
     }
   }
 }
 </script>
+
 <style>
+:root {
+  --forest-green: #1f4f2b;
+  --cream: #f5ebdd;
+  --warm-brown: #6b4f3a;
+  --soft-white: #ffffff;
+  --accent: #d4a373;
+  --darkseagreen: #709a5f;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -76,65 +80,51 @@ html {
 }
 
 body {
-  font-family: 'Arial', 'Helvetica', sans-serif;
-  background: linear-gradient(135deg, #ffffff 0%, #ffe0ec 100%);
-  background-attachment: fixed;
+  font-family: Arial, sans-serif;
+  background-color: var(--cream);
   overflow-x: hidden;
-  min-height: 100vh;
 }
 
 img {
   max-width: 100%;
   display: block;
-  border-radius: 15px;
 }
 
 /* NAVIGATION */
 nav {
-  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
-  padding: 1.2rem 2rem;
+  background: rgba(31, 79, 43, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 1rem 2rem;
   position: sticky;
   top: 0;
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 2.5rem;
+  gap: 1rem;
   z-index: 1000;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
   flex-wrap: wrap;
-  border-bottom: 3px solid white;
 }
 
 .nav-logo {
-  font-size: 1.4rem;
+  font-size: 1.5rem;
   font-weight: bold;
-  color: white;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  color: var(--cream);
   margin-right: 1rem;
   white-space: nowrap;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-}
-
-.bow {
-  font-size: 1.5rem;
-  animation: wiggle 1s ease-in-out infinite;
 }
 
 nav a {
-  color: white;
+  color: var(--cream);
   text-decoration: none;
-  font-weight: 700;
-  padding: 10px 20px;
-  border: 2px solid white;
-  border-radius: 20px;
+  font-weight: 600;
+  padding: 8px 14px;
+  border: 2px solid transparent;
+  border-radius: 8px;
   transition: all 0.3s ease;
-  font-size: 1rem;
-  background: rgba(255, 255, 255, 0.15);
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 6px;
 }
 
 nav a i {
@@ -142,25 +132,22 @@ nav a i {
 }
 
 nav a:hover {
-  background: white;
-  color: #ff1493;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.4);
+  background-color: var(--warm-brown);
+  border-color: var(--warm-brown);
+  transform: translateY(-3px);
 }
 
 nav a.active {
-  background: white;
-  color: #ff1493;
-  border-color: white;
+  background-color: var(--warm-brown);
 }
 
 /* FOOTER */
 .footer {
-  background: linear-gradient(135deg, #ff69b4 0%, #ff1493 100%);
-  padding: 30px 20px;
+  background: var(--forest-green);
+  padding: 13px 15px 12px;
   text-align: center;
-  border-top: 3px solid white;
-  margin-top: 60px;
+  border-top: 3px solid var(--accent);
+  margin-top: 25px;
 }
 
 .footer-content {
@@ -170,17 +157,15 @@ nav a.active {
 
 .footer h3 {
   color: white;
-  font-size: 1.8rem;
-  margin-bottom: 10px;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+  font-size: 1.7rem;
+  margin-bottom: 5px;
 }
 
 .footer-text {
-  color: white;
+  color: var(--cream);
   font-size: 0.95rem;
-  line-height: 1.5;
-  margin-bottom: 15px;
-  font-weight: 600;
+  line-height: 1.3;
+  margin-bottom: 12px;
 }
 
 .footer-links {
@@ -188,16 +173,15 @@ nav a.active {
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  gap: 10px;
-  margin-bottom: 15px;
+  gap: 8px;
+  margin-bottom: 12px;
 }
 
 .footer-links a {
   color: white;
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
   transition: 0.3s ease;
-  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -208,69 +192,41 @@ nav a.active {
 }
 
 .footer-links a:hover {
-  text-decoration: underline;
-  transform: scale(1.05);
+  color: var(--accent);
 }
 
 .footer-links span {
-  color: white;
-  font-weight: bold;
+  color: rgba(255, 255, 255, 0.4);
 }
 
 .footer-line {
-  width: 80%;
-  height: 2px;
-  background: white;
-  margin: 15px auto;
-  border-radius: 2px;
+  width: 85%;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.2);
+  margin: 0 auto 10px;
 }
 
 .copyright {
-  color: white;
-  font-size: 0.85rem;
-  font-weight: 600;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.8rem;
 }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
-  outline: 3px solid #ff1493;
+  outline: 3px solid var(--accent);
   outline-offset: 3px;
-}
-
-@keyframes wiggle {
-  0%, 100% {
-    transform: rotate(0deg);
-  }
-  25% {
-    transform: rotate(-5deg);
-  }
-  75% {
-    transform: rotate(5deg);
-  }
 }
 
 @media (max-width: 768px) {
   nav {
-    gap: 1rem;
-  }
-
-  .nav-logo {
-    width: 100%;
-    text-align: center;
-    margin-right: 0;
-    margin-bottom: 1rem;
-    font-size: 1.2rem;
+    flex-wrap: wrap;
+    padding: 1rem;
   }
 
   nav a {
     font-size: 0.9rem;
-    padding: 8px 15px;
-  }
-
-  .footer h3 {
-    font-size: 1.4rem;
   }
 }
 </style>
